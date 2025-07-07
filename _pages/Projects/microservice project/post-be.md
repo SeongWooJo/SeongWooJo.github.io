@@ -3,7 +3,7 @@ title: "MicroService 기술 분석하기"
 tags:
     - tech
     - BE
-date: "2025-07-08"
+date: "2025-07-07"
 thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
 ---
 
