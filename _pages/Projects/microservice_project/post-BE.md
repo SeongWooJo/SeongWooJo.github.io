@@ -1,7 +1,6 @@
 ---
 title: "MicroService 구현 기술 스택 비교"
 tags:
-    - tech
     - BE
 date: "2025-07-08"
 thumbnail: "/assets/img/thumbnail/book.jpg"
