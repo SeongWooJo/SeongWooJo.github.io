@@ -1,10 +1,9 @@
 ---
-title: "Classic Literature #1: Romeo and Juliet"
+title: "MicroService 기술 분석하기"
 tags:
-    - book
-    - epic novel
-    - romance
-date: "2023-12-04"
+    - tech
+    - BE
+date: "2025-07-08"
 thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
 ---
 
