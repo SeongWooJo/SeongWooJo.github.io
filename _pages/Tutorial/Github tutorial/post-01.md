@@ -12,7 +12,7 @@ date: "2025-07-07"
 ---
 title: "Example Post: thumbnail exists"
 date: "2023-12-02"
-thumbnail: "/assets/img/logo/github.png"
+thumbnail: "/assets/img/logo/github.webp"
 ---
 ```
 
