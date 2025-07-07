@@ -1,7 +1,7 @@
 ---
 title: "Github Blog 작성하기 Tutorial"
 date: "2025-07-07"
-thumbnail: "/assets/img/thumbnail/github.webp"
+thumbnail: "/assets/img/thumbnail/bricks.webp"
 ---
 
 # Follow the guidance
