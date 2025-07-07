@@ -1,6 +1,6 @@
 ---
-title: "Example Post: no thumbnail image"
-date: "2023-12-01"
+title: "Github Blog 작성하기 Tutorial"
+date: "2025-07-07"
 ---
 
 # Follow the guidance
@@ -12,7 +12,7 @@ date: "2023-12-01"
 ---
 title: "Example Post: thumbnail exists"
 date: "2023-12-02"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+thumbnail: "/assets/img/logo/github.png"
 ---
 ```
 
