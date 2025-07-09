@@ -29,6 +29,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-loading-lazy
+  
+include:
+  - assets/img/pages
 
 exclude:
   - docs/
