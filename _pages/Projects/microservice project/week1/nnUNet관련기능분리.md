@@ -33,12 +33,12 @@ thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
 
 ## 개발일정
 
-| Date | To Do |
-| ------------ | ------------- |
-| ~07.09 | gRPC를 통한 통신 구조 및 볼륨 마운트를 통해 동일한 파일 접근 가능한지 테스트 수행  |
-| ~07.10 | monolithic하게 구현할지, microservice로 구현할지 결정 |
-| ~07.13 | nnUNet을 Path만 가지고 있으면, Phase에 따라 실행하는 구조 생성  |
-| ~07.14 | optional한 기능의 구현가능성에 따라 추가 |
+| Date | To Do | Process |
+| ------------ | ------------- | ------------- |
+| ~07.09 | gRPC를 통한 통신 구조 및 볼륨 마운트를 통해 동일한 파일 접근 가능한지 테스트 수행 | 완료(07.09~07.09) |
+| ~07.10 | monolithic하게 구현할지, microservice로 구현할지 결정 | 진행(07.09~) |
+| ~07.13 | nnUNet을 Path만 가지고 있으면, Phase에 따라 실행하는 구조 생성  | |
+| ~07.14 | optional한 기능의 구현가능성에 따라 추가 | | 
 
 ## 버그 해결
 
