@@ -11,7 +11,9 @@ bookmark: true
 <h2>🔥 프로젝트 리스트</h2>
 <ul>
   {% include custom/truck.html %}
-  <li><a href="project1.html">Project 1</a></li>
+  
+  <iframe src="/assets/custom/truck.html" width="100%" height="200" style="border: none;"></iframe>
+
 </ul>
 <h2>내용 삽입</h2>
 
