@@ -10,7 +10,7 @@ bookmark: true
 
 <h2>🔥 프로젝트 리스트</h2>
 <ul>
-  {% include custom/truck.html %}
+  {% include custom/truck_test.html %}
   
   <iframe src="/assets/custom/truck.html" width="100%" height="200" style="border: none;"></iframe>
 
