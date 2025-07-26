@@ -10,7 +10,7 @@ bookmark: true
 
 <h2>🔥 프로젝트 리스트</h2>
 <ul>
-  {% include custom/truck_test.html %}
+  {% include custom/truck.html %}
 </ul>
 <h2>내용 삽입</h2>
 
