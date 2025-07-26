@@ -7,3 +7,5 @@ _site/
 *.gem
 Gemfile.lock
 vendor
+# 모든 templete.md 무시
+**/templete.md
