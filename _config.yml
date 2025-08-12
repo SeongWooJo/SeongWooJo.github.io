@@ -21,6 +21,7 @@ google_analytics:
 google_site_verification: nb_BBOCn4QR_6xUVHV_-97hZaCiSdhQZzPUkrpm6gts
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
 # Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
+url: "https://seongwoojo.github.io"
 baseurl: ""
 
 # Build settings
@@ -48,7 +49,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      date: "1900-01-01"
+      #date: "1900-01-01"
 
 # Markdown newline activator 
 kramdown:
