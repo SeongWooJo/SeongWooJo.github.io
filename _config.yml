@@ -22,7 +22,7 @@ google_site_verification: nb_BBOCn4QR_6xUVHV_-97hZaCiSdhQZzPUkrpm6gts
 naver_site_verification: 43a3e9f076d8c83b263e51cdd1681795e540879e
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
 # Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
-url: "https://seongwoojo.github.io"
+url: https://seongwoojo.github.io
 baseurl: ""
 
 # Build settings
