@@ -6,6 +6,7 @@ tags:
     - 상태관리
 date: "2025-09-10"
 thumbnail: "/assets/img/thumbnail/jwt.webp"
+permalink: /cs-note/Web/상태관리/JWT
 bookmark: true
 ---
 
