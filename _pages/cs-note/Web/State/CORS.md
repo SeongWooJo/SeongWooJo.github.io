@@ -6,7 +6,7 @@ tags:
     - 상태관리
 date: "2025-08-29"
 thumbnail: "/assets/img/pages/cs-note/Web/상태관리/scenario.webp"
-permalink: /cs-note/Web/상태관리/CORS
+permalink: /cs-note/Web/State/CORS
 bookmark: true
 ---
 

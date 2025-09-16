@@ -6,7 +6,7 @@ tags:
     - 상태관리
 date: "2025-09-16"
 thumbnail: "/assets/img/thumbnail/cookie.jpg"
-permalink: /cs-note/Web/상태관리/Cookie
+permalink: /cs-note/Web/State/Cookie
 bookmark: true
 ---
 
