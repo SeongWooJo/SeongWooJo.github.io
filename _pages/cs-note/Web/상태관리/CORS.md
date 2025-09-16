@@ -86,3 +86,16 @@ JavaScript, Browser, API Server의 통신은 위와 같은 그림으로 나타�
 3. Credentitaled Request
 
     Cookie나 Session에 대한 정보가 담긴 HTTPS 요청이 들어올 때 Credentitaled Request가 수행된다. 기본적인 매커니즘은 Origin을 검사하는 Preflight Request와 동일하지만, 해당 Request를 수행할 때 Access-Control-Allow-Origin이 Wild Card : * 로 설정되어있을 때 브라우저가 자동으로 차단하며, Access-Control-Allow-Credentials가 true일 때만 해당 요청을 수락하는 추가적인 보안 사항이 존재한다.
+
+### CORS와 개발환경
+
+CORS는 기본적으로 Origin이 사전에 허용되어있거나, 동일해야지만 브라우저가 fetch를 허용해준다. 하지만 여기서 문제가 발생한다. 개발환경인 경우 모든 개발자의 컴퓨터를 어딘가에 배포한 것이 아닌 각자 컴퓨터에서 프론트엔드를 실행하기에 Origin을 하나로 고정할 수 없다는 문제가 발생한다.
+또한 리다이렉트 등의 문제가 발생하면, 기존의 허용해두었던 Origin이 변경되어 무수한 CORS 에러를 만나게 되었다.
+
+근본적인 문제는 각 개발환경은 ip가 모두 다른 것이다. 그렇기에 FE 개발환경과 백엔드 서버를 CORS 오류가 없이 연결하기 위해서는, localhost:3000과 같은 특정 도메인을 프론트엔드 개발환경에서 만드는 브라우저가 인식하는 Origin을 모든 개발환경의 개발자들이 통일할 필요성이 있고, 통일한 Origin을 백엔드에서 allow origin으로 허용해주어야 SOP 정책을 통과할 수 있다.
+
+프론트엔드와 백엔드를 연결하는 과정에서 인증과 CORS 정책이 겹쳐 해결한 방식을 아래에 포스트에 정리하였다.
+
+
+
+```
