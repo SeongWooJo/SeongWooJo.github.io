@@ -34,8 +34,6 @@ plugins:
   
 include:
   - assets/img/pages
-  - robots.txt
-  - navereee8638c13cddf4e3e7d5bd5113de6e4.html
   
 exclude:
   - docs/
