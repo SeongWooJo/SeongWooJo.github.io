@@ -12,18 +12,18 @@ linkedin_username: linkedin
 facebook_username: facebook
 
 # External API
-giscus_repo: "byanko55/jekyll-theme-satellite"
-giscus_repoId: "R_kgDOJ6fqWg"
+giscus_repo: "SeongWooJo/SeongWooJo.github.io"
+giscus_repoId: "R_kgDOPIMrXA"
 giscus_category: "Q&A"
-giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
-goatcounter_code: byanko77
+giscus_categoryId: "DIC_kwDOPIMrXM4Cx7Sw"
+goatcounter_code: seongwoojo
 google_analytics:
 google_site_verification: nb_BBOCn4QR_6xUVHV_-97hZaCiSdhQZzPUkrpm6gts
 naver_site_verification: 1e6c99b3cb8dcbbbbdb4f07f256134cc5ba87ea2
+
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
 # Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
-url: https://seongwoojo.github.io
-baseurl: ""
+baseurl:
 
 # Build settings
 plugins:
@@ -31,10 +31,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-loading-lazy
-  
-include:
-  - assets/img/pages
-  
+
 exclude:
   - docs/
 
@@ -50,7 +47,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      #date: "1900-01-01"
+      date: "2025-08-01 12:00:00"
 
 # Markdown newline activator 
 kramdown:
