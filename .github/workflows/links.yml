@@ -17,13 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: 바깥 주소 확인
-        uses: lycheeverse/lychee-action@v2
-        with:
-          # 403·429 는 사람에게는 열리는데 자동 확인만 막는 곳이 많아 통과로 본다
-          args: >-
-            --no-progress --max-retries 2 --timeout 20
-            --accept 200..=299,403,429
-            --exclude-loopback
-            'content/**/*.md'
-          fail: true
-          failIfEmpty: false
+        run: python3 .github/scripts/check-links.py
