@@ -1,11 +1,14 @@
-# Jekyll
-_site/
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-.bundle
-*.gem
-Gemfile.lock
-vendor
-# 모든 templete.md 무시
-**/templete.md
+.DS_Store
+node_modules
+public
+prof
+tsconfig.tsbuildinfo
+.obsidian
+.quartz-cache
+private/
+.replit
+replit.nix
+.quartz/
+quartz/cli/tui/dist/
+.turbo/
+quartz.lock.json

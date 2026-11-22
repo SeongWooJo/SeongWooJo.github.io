@@ -1,0 +1,23 @@
+{
+  "name": "post-sitemap",
+  "version": "0.1.0",
+  "description": "글과 홈만 담는 sitemap.xml 을 만드는 Quartz 플러그인 (폴더·태그 목록 페이지 제외)",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./package.json": "./package.json"
+  },
+  "quartz": {
+    "name": "post-sitemap",
+    "displayName": "Post Sitemap",
+    "category": "emitter",
+    "version": "0.1.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 90,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}

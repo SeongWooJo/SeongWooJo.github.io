@@ -1,0 +1,362 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+configuration:
+  pageTitle: 카페인 중독자
+  pageTitleSuffix: ""
+  enableSPA: true
+  enablePopovers: true
+  # 방문자 집계. websiteId 는 GoatCounter 에 만든 사이트 코드(https://<코드>.goatcounter.com).
+  # localhost 에서는 세지 않는다 (count.js 기본 동작).
+  analytics:
+    provider: goatcounter
+    websiteId: seongwoojo
+  locale: ko-KR
+  baseUrl: seongwoojo.github.io
+  ignorePatterns:
+    - private
+    - templates
+    - .obsidian
+  theme:
+    # local = 웹 글꼴을 내려받지 않고 보는 사람 기기의 기본 글꼴로 그린다
+    # (맥: 애플 SD 산돌고딕 Neo, 윈도우: 맑은 고딕, 안드로이드: Noto Sans).
+    # Noto Sans KR 을 Google Fonts 에서 받으면 스타일 파일만 69KB 라 첫 화면이 약 0.5초 늦고,
+    # 글꼴이 바뀌는 순간 화면이 밀린다.
+    # 되돌리려면 여기를 googleFonts 로 바꾼다 (아래 fonts: 는 꺼 둔 채로 둔다).
+    # 아래 typography 의 이름은 그대로 둔다 — 링크 미리보기 그림(og-image)을 만들 때 쓰인다.
+    fontOrigin: local
+    cdnCaching: true
+    typography:
+      header: Noto Sans KR
+      body: Noto Sans KR
+      code: IBM Plex Mono
+    colors:
+      lightMode:
+        light: "#faf8f8"
+        lightgray: "#e5e5e5"
+        gray: "#b8b8b8"
+        darkgray: "#4e4e4e"
+        dark: "#2b2b2b"
+        secondary: "#284b63"
+        tertiary: "#84a59d"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#fff23688"
+      darkMode:
+        light: "#161618"
+        lightgray: "#393639"
+        gray: "#646464"
+        darkgray: "#d4d4d4"
+        dark: "#ebebec"
+        secondary: "#7b97aa"
+        tertiary: "#84a59d"
+        highlight: rgba(143, 159, 169, 0.15)
+        textHighlight: "#b3aa0288"
+  # 글꼴을 싣는 내장 기능은 끈다. 켜 두면 (1) theme.fontOrigin 이 local 이어도 이쪽이 Google Fonts 링크를 넣고,
+  # (2) 글꼴 이름만 적고 대체 글꼴 목록을 빼 버려서, 그 글꼴이 없는 기기에서는 코드까지 고정폭이 아닌
+  # 글꼴로 나온다. 꺼 두면 Quartz 기본 목록("Noto Sans KR", system-ui, … / "IBM Plex Mono", ui-monospace, …)이 쓰인다.
+  fonts:
+    enabled: false
+  links:
+    markdownLinkResolution: shortest
+    disableBrokenWikilinks: true
+  contentIndex:
+    enableSiteMap: false
+    # 내장 RSS 는 홈도 글처럼 넣어서 끈다. 글만 담는 index.xml 을 ./plugins/post-sitemap 이 만든다.
+    enableRSS: false
+    # 본문이 없는 페이지(폴더·태그 목록)는 검색·그래프·RSS 색인에서 뺀다.
+    # 켜 두면 전체 그래프에 폴더 페이지가 연결 없는 점으로 나온다.
+    includeEmptyFiles: false
+  publishAssets: referenced
+plugins:
+  - source: "@quartz-community/created-modified-date"
+    enabled: true
+    options:
+      defaultDateType: created
+      priority:
+        - frontmatter
+        - git
+        - filesystem
+    order: 10
+  - source: "@quartz-community/syntax-highlighting"
+    enabled: true
+    options:
+      theme:
+        light: github-light
+        dark: github-dark
+      keepBackground: false
+    order: 20
+  - source: "@quartz-community/obsidian-flavored-markdown"
+    enabled: true
+    options:
+      enableInHtmlEmbed: false
+      enableCheckbox: true
+      parseTags: false
+    order: 40
+  - source: "@quartz-community/github-flavored-markdown"
+    enabled: true
+    order: 30
+  - source: "@quartz-community/table-of-contents"
+    enabled: true
+    order: 50
+    layout:
+      position: right
+      priority: 30
+  - source: "@quartz-community/description"
+    enabled: true
+    order: 70
+  - source: "@quartz-community/latex"
+    enabled: true
+    options:
+      renderEngine: katex
+    order: 80
+  - source: "@quartz-community/citations"
+    enabled: false
+    order: 85
+  - source: "@quartz-community/ox-hugo"
+    enabled: false
+    order: 91
+  - source: "@quartz-community/roam"
+    enabled: false
+    order: 92
+  - source: "@quartz-themes/core"
+    enabled: false
+    options:
+      theme: tokyo-night
+      mode: both
+  # 글마다 publish: true 를 요구하는 기능은 끈다. content/ 에는 볼트의 동기화가 공개 단계(4)인 글만 넣는다.
+  - source: "@quartz-community/explicit-publish"
+    enabled: false
+  - source: "@quartz-community/unlisted-pages"
+    enabled: true
+    options: {}
+    order: 45
+  - source: "@quartz-community/encrypted-pages"
+    enabled: false
+  - source: "@quartz-community/stacked-pages"
+    enabled: false
+    layout:
+      position: afterBody
+      priority: 50
+      display: all
+  - source: "@quartz-community/alias-redirects"
+    enabled: true
+  - source: "@quartz-community/favicon"
+    enabled: true
+  - source: "@quartz-community/og-image"
+    enabled: true
+  - source: "@quartz-community/cname"
+    enabled: false
+  - source: "@quartz-community/canvas-page"
+    enabled: true
+  - source: "@quartz-community/content-page"
+    enabled: true
+  - source: "@quartz-community/folder-page"
+    enabled: true
+  - source: "@quartz-community/tag-page"
+    enabled: true
+  - source: "@quartz-community/explorer"
+    enabled: true
+    layout:
+      position: left
+      priority: 50
+  # 그래프는 두 번 등록한다: 글 화면용(그 글과 이어진 글만)과 홈 화면용(사이트 전체).
+  # 같은 플러그인을 두 번 적으면 빌드 때 "listed more than once" 경고가 한 줄 나오는데 의도한 것이다.
+  - source: "@quartz-community/graph"
+    enabled: true
+    layout:
+      position: right
+      priority: 10
+      condition: not-index
+  - source: "@quartz-community/graph"
+    enabled: true
+    layout:
+      position: right
+      priority: 10
+      condition: index-only
+    options:
+      localGraph:
+        depth: -1 # -1 = 사이트 전체
+        # 아래 셋은 전체 그래프가 작은 상자 안에 들어오게 하는 배치 값이다.
+        # (scale 은 글자 크기만 바꾸고 화면 배율은 못 바꾼다 — 배치로 맞춰야 한다.)
+        enableRadial: true # 점들을 상자 가운데를 둘러싼 원 쪽으로 모은다
+        centerForce: 0.05 # 크면 뭉친 쪽이 가운데로 오면서 반대쪽 점이 상자 밖으로 밀린다
+        repelForce: 0.15 # 점끼리 밀어내는 힘. 작을수록 덜 퍼진다 (0.25 에서는 가장자리 점이 잘렸다)
+        focusOnHover: true # 점에 마우스를 올리면 이어진 글만 진하게
+  - source: "@quartz-community/search"
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      group: toolbar
+      groupOptions:
+        grow: true
+  - source: "@quartz-community/backlinks"
+    enabled: true
+    layout:
+      position: right
+      priority: 50
+      condition: not-index
+  - source: "@quartz-community/article-title"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+  - source: "@quartz-community/content-meta"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+      condition: not-index
+    options:
+      showReadingTime: false
+  - source: "@quartz-community/tag-list"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 30
+  - source: "@quartz-community/page-title"
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+  - source: "@quartz-community/darkmode"
+    enabled: true
+    layout:
+      position: left
+      priority: 30
+      group: toolbar
+  - source: "@quartz-community/reader-mode"
+    enabled: true
+    layout:
+      position: left
+      priority: 35
+      group: toolbar
+  - source: "@quartz-community/breadcrumbs"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+  # 댓글: 예전 블로그와 같은 giscus (저장소 Discussions 의 Q&A 분류, 글 주소 경로 기준).
+  # 값은 예전 _config.yml 의 giscus_* 와 같다. 홈·분류·태그·404 화면에는 넣지 않는다.
+  - source: "@quartz-community/comments"
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: SeongWooJo/SeongWooJo.github.io
+        repoId: R_kgDOPIMrXA
+        category: "Q&A"
+        categoryId: DIC_kwDOPIMrXM4Cx7Sw
+        mapping: pathname
+        strict: true
+        reactionsEnabled: true
+        inputPosition: bottom
+        # 기본값은 이 사이트의 /static/giscus 인데, 로컬 데모에서는 giscus 가 그 주소를 못 읽는다.
+        themeUrl: https://giscus.app/themes
+        lightTheme: light
+        darkTheme: dark
+        lang: ko
+    layout:
+      position: afterBody
+      priority: 10
+      condition: not-index
+  - source: "@quartz-community/footer"
+    enabled: true
+    options:
+      # 홈의 연락처 링크(content/index.md 의 links:)와 같은 주소를 적는다
+      links:
+        GitHub: https://github.com/SeongWooJo
+        LinkedIn: https://www.linkedin.com/
+        Email: mailto:abc8325767@gmail.com
+    layout:
+      position: footer
+      priority: 50
+  - source: "@quartz-community/recent-notes"
+    enabled: false
+    options:
+      title: 최근 글
+      limit: 10
+      showTags: true
+      linkToMore: false
+    layout:
+      position: afterBody
+      priority: 5
+      condition: index-only
+  - source: "@quartz-community/spacer"
+    enabled: true
+    options: {}
+    order: 25
+    layout:
+      position: left
+      priority: 25
+      display: mobile-only
+  - source: "@quartz-community/bases-page"
+    enabled: true
+    options: {}
+    order: 50
+  - source: "@quartz-community/note-properties"
+    enabled: false
+    options:
+      includeAll: false
+      includedProperties:
+        - description
+        - tags
+        - aliases
+      excludedProperties: []
+      hidePropertiesView: false
+    order: 5
+    layout:
+      position: beforeBody
+      priority: 15
+      display: all
+  - source: ./plugins/seo-head
+    enabled: true
+    options:
+      googleSiteVerification: "nb_BBOCn4QR_6xUVHV_-97hZaCiSdhQZzPUkrpm6gts"
+      naverSiteVerification: "1e6c99b3cb8dcbbbbdb4f07f256134cc5ba87ea2"
+      author: ""
+    order: 95
+  - source: ./plugins/post-sitemap
+    enabled: true
+    options: {}
+    order: 90
+  - source: ./plugins/first-load-scroll-fix
+    enabled: true
+    options: {}
+    order: 96
+  - source: ./plugins/cover-image
+    enabled: true
+    options:
+      key: thumbnail
+      alt: 대표 이미지
+    order: 5
+layout:
+  groups:
+    toolbar:
+      priority: 35
+      direction: row
+      gap: 0.5rem
+  byPageType:
+    "404":
+      exclude:
+        - comments
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    content: {}
+    folder:
+      exclude:
+        - reader-mode
+        - comments
+      positions:
+        right: []
+    tag:
+      exclude:
+        - reader-mode
+        - comments
+      positions:
+        right: []
+    canvas: {}
+    bases: {}
+  sidebars:
+    left: scroll

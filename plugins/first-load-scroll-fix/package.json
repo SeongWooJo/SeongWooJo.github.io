@@ -1,0 +1,23 @@
+{
+  "name": "first-load-scroll-fix",
+  "version": "0.1.0",
+  "description": "글을 처음 열 때 탐색기가 화면 전체를 아래로 스크롤하는 현상을 막는 Quartz 플러그인",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./package.json": "./package.json"
+  },
+  "quartz": {
+    "name": "first-load-scroll-fix",
+    "displayName": "First Load Scroll Fix",
+    "category": "transformer",
+    "version": "0.1.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 96,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}

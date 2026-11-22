@@ -1,0 +1,24 @@
+{
+  "name": "seo-head",
+  "version": "0.1.0",
+  "description": "canonical 링크, JSON-LD, 사이트 인증 메타 태그를 head 에 추가하는 Quartz 플러그인",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "import": "./dist/index.js" },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": { "preact": "^10.0.0" },
+  "quartz": {
+    "name": "seo-head",
+    "displayName": "SEO Head",
+    "category": "transformer",
+    "version": "0.1.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 95,
+    "defaultEnabled": true,
+    "defaultOptions": { "googleSiteVerification": "", "naverSiteVerification": "", "author": "" }
+  }
+}
