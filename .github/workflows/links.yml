@@ -1,0 +1,29 @@
+# 글에 적힌 바깥 주소가 아직 열리는지 주 1회 확인한다.
+# 안 열리는 주소가 있으면 이 작업이 실패로 끝나고, 실행 화면의 요약에 목록이 나온다.
+# 글끼리의 링크와 그림은 올릴 때 볼트의 동기화가 따로 검사한다.
+name: 링크 검사
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # 매주 월요일 09:00 (한국 시간)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: 바깥 주소 확인
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403·429 는 사람에게는 열리는데 자동 확인만 막는 곳이 많아 통과로 본다
+          args: >-
+            --no-progress --max-retries 2 --timeout 20
+            --accept 200..=299,403,429
+            --exclude-loopback
+            'content/**/*.md'
+          fail: true
+          failIfEmpty: false

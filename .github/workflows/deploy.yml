@@ -33,7 +33,7 @@ jobs:
       - name: 사이트 만들기
         run: npx quartz build
       - name: 결과 올리기
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: public
 
@@ -46,4 +46,4 @@ jobs:
     steps:
       - name: GitHub Pages 에 내보내기
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
