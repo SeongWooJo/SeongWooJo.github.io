@@ -12,7 +12,7 @@ career:
   - "2026.04-2026.11 소프트웨어 마에스트로 17기"
 links:
   - "GitHub https://github.com/SeongWooJo"
-  - "LinkedIn https://www.linkedin.com/"
+  - "LinkedIn https://www.linkedin.com/in/%EC%84%B1%EC%9A%B0-%EC%A1%B0-229b66376/"
   - "Email mailto:abc8325767@gmail.com"
 ---
 
